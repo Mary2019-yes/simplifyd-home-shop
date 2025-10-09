@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { useCart } from "@/contexts/CartContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
+import { CheckoutModal } from "@/components/CheckoutModal";
 
 const Cart = () => {
   const { cart, removeFromCart, updateQuantity, getTotalPrice, getTotalItems } = useCart();
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   if (cart.length === 0) {
     return (
@@ -120,7 +123,11 @@ const Cart = () => {
                   </div>
                 </div>
 
-                <Button className="w-full mb-4 bg-primary hover:bg-primary-hover" size="lg">
+                <Button 
+                  className="w-full mb-4 bg-primary hover:bg-primary-hover" 
+                  size="lg"
+                  onClick={() => setCheckoutOpen(true)}
+                >
                   Proceed to Checkout
                 </Button>
 
@@ -138,6 +145,8 @@ const Cart = () => {
           </div>
         </div>
       </div>
+
+      <CheckoutModal open={checkoutOpen} onOpenChange={setCheckoutOpen} />
     </div>
   );
 };
