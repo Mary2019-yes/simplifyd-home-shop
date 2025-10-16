@@ -151,7 +151,7 @@ const Contact = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, phone: e.target.value })
                     }
-                    placeholder="+254 700 000000"
+                    placeholder="+254 743039253"
                   />
                 </div>
 
