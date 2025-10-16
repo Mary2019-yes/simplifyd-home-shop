@@ -22,21 +22,21 @@ interface ProductCardProps {
 export const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 animate-scale-in group">
-      <Link to={`/product/${product.id}`}>
-        <div className="aspect-square overflow-hidden bg-muted">
+      <div className="aspect-square overflow-hidden bg-muted cursor-pointer">
+        <Link to={`/product/${product.id}`}>
           <img
             src={product.image}
             alt={product.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
-        </div>
-      </Link>
+        </Link>
+      </div>
       <CardContent className="p-4">
-        <Link to={`/product/${product.id}`}>
-          <p className="text-xs text-muted-foreground mb-1 uppercase tracking-wide">
-            {product.category}
-          </p>
-          <h3 className="font-semibold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+        <p className="text-xs text-muted-foreground mb-1 uppercase tracking-wide">
+          {product.category}
+        </p>
+        <Link to={`/product/${product.id}`} className="block mb-3">
+          <h3 className="font-semibold text-foreground line-clamp-2 hover:text-primary transition-colors">
             {product.name}
           </h3>
         </Link>
@@ -64,7 +64,7 @@ export const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
           <Button
             size="sm"
             onClick={(e) => {
-              e.preventDefault();
+              e.stopPropagation();
               onAddToCart(product);
             }}
             className="bg-primary hover:bg-primary-hover"
