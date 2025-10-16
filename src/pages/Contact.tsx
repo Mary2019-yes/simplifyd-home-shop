@@ -67,7 +67,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-lg mb-1 text-foreground">Call Us</h3>
                     <p className="text-muted-foreground text-sm">
-                      +254 700 000000
+                      +254 743039253
                     </p>
                     <p className="text-xs text-muted-foreground mt-1">
                       Mon-Sat: 8AM - 6PM
