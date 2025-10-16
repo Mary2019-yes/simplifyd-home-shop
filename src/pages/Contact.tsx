@@ -21,7 +21,7 @@ const Contact = () => {
   };
 
   const handleWhatsAppClick = () => {
-    const phone = "254700000000";
+    const phone = "254743039253";
     const message = encodeURIComponent("Hello, I'm interested in your products.");
     window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
   };
