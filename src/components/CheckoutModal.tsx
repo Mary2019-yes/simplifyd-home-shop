@@ -21,6 +21,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "sonner";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
 
 const checkoutSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
@@ -34,6 +36,9 @@ const checkoutSchema = z.object({
   phone: z.string().trim().min(1, "Phone is required").max(20),
   email: z.string().trim().email("Invalid email address").max(255),
   notes: z.string().trim().max(1000).optional(),
+  paymentMethod: z.enum(["mpesa", "cod"], {
+    required_error: "Please select a payment method",
+  }),
 });
 
 type CheckoutFormData = z.infer<typeof checkoutSchema>;
@@ -61,6 +66,7 @@ export const CheckoutModal = ({ open, onOpenChange }: CheckoutModalProps) => {
       phone: "",
       email: "",
       notes: "",
+      paymentMethod: "mpesa",
     },
   });
 
@@ -76,6 +82,8 @@ export const CheckoutModal = ({ open, onOpenChange }: CheckoutModalProps) => {
         )
         .join("%0A");
 
+      const paymentMethodText = data.paymentMethod === "mpesa" ? "M-Pesa" : "Cash on Delivery";
+      
       const orderSummary = `
 *New Order from ${data.firstName} ${data.lastName}*%0A%0A
 *Contact Information:*%0A
@@ -87,7 +95,8 @@ ${data.city}, ${data.county}${data.zip ? ", " + data.zip : ""}%0A
 Kenya%0A${data.companyName ? "%0ACompany: " + data.companyName : ""}%0A%0A
 *Order Items (${getTotalItems()} items):*%0A
 ${orderItems}%0A%0A
-*Total: KSh ${getTotalPrice().toLocaleString()}*%0A
+*Total: KSh ${getTotalPrice().toLocaleString()}*%0A%0A
+*Payment Method: ${paymentMethodText}*%0A
 ${data.notes ? "%0A*Order Notes:*%0A" + data.notes : ""}
       `.trim();
 
@@ -278,6 +287,39 @@ ${data.notes ? "%0A*Order Notes:*%0A" + data.notes : ""}
                       placeholder="Notes about your order, e.g. special instructions"
                       rows={3}
                     />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="paymentMethod"
+              render={({ field }) => (
+                <FormItem className="space-y-3">
+                  <FormLabel>Payment Method *</FormLabel>
+                  <FormControl>
+                    <RadioGroup
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                      className="flex flex-col space-y-1"
+                    >
+                      <div className="flex items-center space-x-3 space-y-0 border rounded-md p-4 cursor-pointer hover:bg-accent">
+                        <RadioGroupItem value="mpesa" id="mpesa" />
+                        <Label htmlFor="mpesa" className="font-normal cursor-pointer flex-1">
+                          <div className="font-semibold">M-Pesa Payment</div>
+                          <div className="text-sm text-muted-foreground">Pay with M-Pesa mobile money</div>
+                        </Label>
+                      </div>
+                      <div className="flex items-center space-x-3 space-y-0 border rounded-md p-4 cursor-pointer hover:bg-accent">
+                        <RadioGroupItem value="cod" id="cod" />
+                        <Label htmlFor="cod" className="font-normal cursor-pointer flex-1">
+                          <div className="font-semibold">Cash on Delivery</div>
+                          <div className="text-sm text-muted-foreground">Pay when you receive your order</div>
+                        </Label>
+                      </div>
+                    </RadioGroup>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
