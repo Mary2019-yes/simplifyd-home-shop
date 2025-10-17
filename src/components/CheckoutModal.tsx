@@ -23,6 +23,7 @@ import { useCart } from "@/contexts/CartContext";
 import { toast } from "sonner";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+import { supabase } from "@/integrations/supabase/client";
 
 const checkoutSchema = z.object({
   firstName: z.string().trim().min(1, "First name is required").max(100),
@@ -74,17 +75,36 @@ export const CheckoutModal = ({ open, onOpenChange }: CheckoutModalProps) => {
     setIsSubmitting(true);
 
     try {
-      // Create order summary
-      const orderItems = cart
-        .map(
-          (item) =>
-            `${item.name} (x${item.quantity}) - KSh ${(item.price * item.quantity).toLocaleString()}`
-        )
-        .join("%0A");
+      if (data.paymentMethod === "mpesa") {
+        // Initiate M-Pesa payment
+        const { data: paymentData, error } = await supabase.functions.invoke('mpesa-payment', {
+          body: {
+            phoneNumber: data.phone,
+            amount: getTotalPrice(),
+          },
+        });
 
-      const paymentMethodText = data.paymentMethod === "mpesa" ? "M-Pesa" : "Cash on Delivery";
-      
-      const orderSummary = `
+        if (error) throw error;
+
+        if (paymentData?.success) {
+          toast.success(paymentData.message);
+          // Clear cart and close modal after successful payment initiation
+          clearCart();
+          onOpenChange(false);
+          form.reset();
+        } else {
+          throw new Error(paymentData?.error || 'Payment failed');
+        }
+      } else {
+        // Cash on Delivery - send to WhatsApp
+        const orderItems = cart
+          .map(
+            (item) =>
+              `${item.name} (x${item.quantity}) - KSh ${(item.price * item.quantity).toLocaleString()}`
+          )
+          .join("%0A");
+
+        const orderSummary = `
 *New Order from ${data.firstName} ${data.lastName}*%0A%0A
 *Contact Information:*%0A
 Phone: ${data.phone}%0A
@@ -96,21 +116,21 @@ Kenya%0A${data.companyName ? "%0ACompany: " + data.companyName : ""}%0A%0A
 *Order Items (${getTotalItems()} items):*%0A
 ${orderItems}%0A%0A
 *Total: KSh ${getTotalPrice().toLocaleString()}*%0A%0A
-*Payment Method: ${paymentMethodText}*%0A
+*Payment Method: Cash on Delivery*%0A
 ${data.notes ? "%0A*Order Notes:*%0A" + data.notes : ""}
-      `.trim();
+        `.trim();
 
-      // Send to WhatsApp
-      const whatsappUrl = `https://wa.me/254743039253?text=${orderSummary}`;
-      window.open(whatsappUrl, "_blank");
+        const whatsappUrl = `https://wa.me/254743039253?text=${orderSummary}`;
+        window.open(whatsappUrl, "_blank");
 
-      // Clear cart and close modal
-      clearCart();
-      onOpenChange(false);
-      form.reset();
-      toast.success("Order placed! We'll contact you shortly.");
+        clearCart();
+        onOpenChange(false);
+        form.reset();
+        toast.success("Order placed! We'll contact you shortly.");
+      }
     } catch (error) {
-      toast.error("Failed to place order. Please try again.");
+      const errorMessage = error instanceof Error ? error.message : 'Failed to place order. Please try again.';
+      toast.error(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
