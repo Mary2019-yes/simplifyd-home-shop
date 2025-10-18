@@ -37,8 +37,21 @@ serve(async (req) => {
       }
     );
 
-    const { access_token } = await tokenResponse.json();
+    if (!tokenResponse.ok) {
+      const errorText = await tokenResponse.text();
+      console.error('Token request failed:', tokenResponse.status, errorText);
+      throw new Error(`Failed to get M-Pesa access token: ${tokenResponse.status} - ${errorText}`);
+    }
+
+    const tokenData = await tokenResponse.json();
     console.log('Access token obtained');
+
+    if (!tokenData.access_token) {
+      console.error('No access token in response:', tokenData);
+      throw new Error('M-Pesa API did not return an access token');
+    }
+
+    const access_token = tokenData.access_token;
 
     // Generate timestamp
     const timestamp = new Date().toISOString().replace(/[^0-9]/g, '').slice(0, -3);
@@ -73,6 +86,12 @@ serve(async (req) => {
         }),
       }
     );
+
+    if (!stkResponse.ok) {
+      const errorText = await stkResponse.text();
+      console.error('STK Push request failed:', stkResponse.status, errorText);
+      throw new Error(`M-Pesa STK Push failed: ${stkResponse.status} - ${errorText}`);
+    }
 
     const stkData = await stkResponse.json();
     console.log('STK Push response:', stkData);
