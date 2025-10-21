@@ -1,5 +1,6 @@
 import { Product } from "@/components/ProductCard";
 import electricKettleImg from "@/assets/electric-kettle.jpg";
+import cutlerySetImg from "@/assets/cutlery-set.jpg";
 
 export const products: Product[] = [
   {
@@ -67,7 +68,7 @@ export const products: Product[] = [
     name: "Stainless Steel Cutlery Set",
     category: "Utensils",
     price: 3200,
-    image: "https://images.unsplash.com/photo-1578450671530-5b6a7c9f32a8?w=500&h=500&fit=crop",
+    image: cutlerySetImg,
     rating: 4.9,
     reviews: 203,
     description: "24-piece premium cutlery set. Mirror-polished finish and dishwasher safe.",
