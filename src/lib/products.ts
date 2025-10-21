@@ -1,4 +1,5 @@
 import { Product } from "@/components/ProductCard";
+import electricKettleImg from "@/assets/electric-kettle.jpg";
 
 export const products: Product[] = [
   {
@@ -26,7 +27,7 @@ export const products: Product[] = [
     name: "Electric Kettle 1.7L",
     category: "Kitchen Appliances",
     price: 2500,
-    image: "https://images.unsplash.com/photo-1572635148818-ef6fd45eb394?w=500&h=500&fit=crop",
+    image: electricKettleImg,
     rating: 4.3,
     reviews: 215,
     description: "Fast-boiling stainless steel electric kettle with auto shut-off and boil-dry protection. 1.7L capacity.",
