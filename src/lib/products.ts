@@ -1,6 +1,7 @@
 import { Product } from "@/components/ProductCard";
 import electricKettleImg from "@/assets/electric-kettle.jpg";
 import cutlerySetImg from "@/assets/cutlery-set.jpg";
+import airFryerImg from "@/assets/air-fryer.jpg";
 
 export const products: Product[] = [
   {
@@ -8,7 +9,7 @@ export const products: Product[] = [
     name: "Stainless Steel Air Fryer",
     category: "Kitchen Appliances",
     price: 8500,
-    image: "https://images.unsplash.com/photo-1585515320310-259814833e62?w=500&h=500&fit=crop",
+    image: airFryerImg,
     rating: 4.5,
     reviews: 124,
     description: "5L capacity air fryer with digital controls and 8 preset cooking modes. Perfect for healthy cooking with little to no oil.",
