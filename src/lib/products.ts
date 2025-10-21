@@ -2,6 +2,7 @@ import { Product } from "@/components/ProductCard";
 import electricKettleImg from "@/assets/electric-kettle.jpg";
 import cutlerySetImg from "@/assets/cutlery-set.jpg";
 import airFryerImg from "@/assets/air-fryer.jpg";
+import vonAirFryerImg from "@/assets/von-air-fryer.jpg";
 
 export const products: Product[] = [
   {
@@ -83,6 +84,16 @@ export const products: Product[] = [
     rating: 4.5,
     reviews: 91,
     description: "Adjustable LED lamp with touch controls and USB charging port. Multiple brightness levels and color temperatures.",
+  },
+  {
+    id: "9",
+    name: "Von Manual Air Fryer - 6.5L",
+    category: "Kitchen Appliances",
+    price: 8900,
+    image: vonAirFryerImg,
+    rating: 4.6,
+    reviews: 87,
+    description: "Von manual air fryer with 6.5L capacity. Manual control dials for precise temperature and time settings. Perfect for large family meals.",
   },
 ];
 
