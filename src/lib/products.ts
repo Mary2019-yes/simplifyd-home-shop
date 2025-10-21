@@ -3,6 +3,7 @@ import electricKettleImg from "@/assets/electric-kettle.jpg";
 import cutlerySetImg from "@/assets/cutlery-set.jpg";
 import airFryerImg from "@/assets/air-fryer.jpg";
 import vonAirFryerImg from "@/assets/von-air-fryer.jpg";
+import thermosCupsComboImg from "@/assets/thermos-cups-combo.jpg";
 
 export const products: Product[] = [
   {
@@ -94,6 +95,16 @@ export const products: Product[] = [
     rating: 4.6,
     reviews: 87,
     description: "Von manual air fryer with 6.5L capacity. Manual control dials for precise temperature and time settings. Perfect for large family meals.",
+  },
+  {
+    id: "10",
+    name: "Thermos and 6 Cups Combo",
+    category: "Accessories",
+    price: 900,
+    image: thermosCupsComboImg,
+    rating: 4.4,
+    reviews: 76,
+    description: "Stainless steel thermos flask with 6 matching insulated cups. Perfect for outdoor activities, picnics, or keeping beverages hot/cold.",
   },
 ];
 
