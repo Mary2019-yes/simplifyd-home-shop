@@ -24,6 +24,53 @@ import mopBucketSetImg from "@/assets/mop-bucket-set.jpg";
 import dishRackImg from "@/assets/dish-rack.jpg";
 import spiceRackImg from "@/assets/spice-rack.jpg";
 import teaSetImg from "@/assets/tea-set.jpg";
+import handBlenderImg from "@/assets/hand-blender.jpg";
+import sandwichMakerImg from "@/assets/sandwich-maker.jpg";
+import electricJugImg from "@/assets/electric-jug.jpg";
+import juicerImg from "@/assets/juicer.jpg";
+import deepFryerImg from "@/assets/deep-fryer.jpg";
+import headphonesImg from "@/assets/headphones.jpg";
+import powerBankImg from "@/assets/power-bank.jpg";
+import chargingCablesImg from "@/assets/charging-cables.jpg";
+import phoneHolderImg from "@/assets/phone-holder.jpg";
+import hairDryerImg from "@/assets/hair-dryer.jpg";
+import hairClipperImg from "@/assets/hair-clipper.jpg";
+import weighingScaleImg from "@/assets/weighing-scale.jpg";
+import laptopCoolerImg from "@/assets/laptop-cooler.jpg";
+import wirelessMouseImg from "@/assets/wireless-mouse.jpg";
+import keyboardImg from "@/assets/keyboard.jpg";
+import webcamImg from "@/assets/webcam.jpg";
+import laptopBagImg from "@/assets/laptop-bag.jpg";
+import extensionSocketImg from "@/assets/extension-socket.jpg";
+import pillowImg from "@/assets/pillow.jpg";
+import duvetImg from "@/assets/duvet.jpg";
+import throwPillowsImg from "@/assets/throw-pillows.jpg";
+import tableLampImg from "@/assets/table-lamp.jpg";
+import wallArtImg from "@/assets/wall-art.jpg";
+import areaRugImg from "@/assets/area-rug.jpg";
+import curtainsImg from "@/assets/curtains.jpg";
+import showerCurtainImg from "@/assets/shower-curtain.jpg";
+import bathroomOrganizerImg from "@/assets/bathroom-organizer.jpg";
+import storageBoxImg from "@/assets/storage-box.jpg";
+import shoeRackImg from "@/assets/shoe-rack.jpg";
+import hangersImg from "@/assets/hangers.jpg";
+import mirrorImg from "@/assets/mirror.jpg";
+import trashCanImg from "@/assets/trash-can.jpg";
+import yogaMatImg from "@/assets/yoga-mat.jpg";
+import dumbbellsImg from "@/assets/dumbbells.jpg";
+import jumpRopeImg from "@/assets/jump-rope.jpg";
+import waterBottleImg from "@/assets/water-bottle.jpg";
+import lunchBoxImg from "@/assets/lunch-box.jpg";
+import alarmClockImg from "@/assets/alarm-clock.jpg";
+import deskOrganizerImg from "@/assets/desk-organizer.jpg";
+import officeChairImg from "@/assets/office-chair.jpg";
+import computerDeskImg from "@/assets/computer-desk.jpg";
+import bookshelfImg from "@/assets/bookshelf.jpg";
+import dryingRackImg from "@/assets/drying-rack.jpg";
+import ironingBoardImg from "@/assets/ironing-board.jpg";
+import broomSetImg from "@/assets/broom-set.jpg";
+import toiletBrushImg from "@/assets/toilet-brush.jpg";
+import cleaningGlovesImg from "@/assets/cleaning-gloves.jpg";
 
 export const products: Product[] = [
   {
@@ -326,6 +373,476 @@ export const products: Product[] = [
     reviews: 112,
     description: "Elegant 7-piece tea set with gold trim. Includes teapot and 6 cups with saucers. Perfect for entertaining guests.",
   },
+  {
+    id: "31",
+    name: "Hand Blender 300W",
+    category: "Kitchen Appliances",
+    price: 2800,
+    image: handBlenderImg,
+    rating: 4.4,
+    reviews: 89,
+    description: "Powerful hand blender with stainless steel shaft. Multiple speed settings for blending soups, smoothies, and baby food.",
+  },
+  {
+    id: "32",
+    name: "Sandwich Maker",
+    category: "Kitchen Appliances",
+    price: 2200,
+    image: sandwichMakerImg,
+    rating: 4.3,
+    reviews: 145,
+    description: "Non-stick sandwich maker with indicator lights. Makes perfectly toasted sandwiches in minutes. Compact design.",
+  },
+  {
+    id: "33",
+    name: "Electric Kettle Jug 1.8L",
+    category: "Kitchen Appliances",
+    price: 2800,
+    image: electricJugImg,
+    rating: 4.5,
+    reviews: 198,
+    description: "Large capacity electric jug with LED indicator. Cordless design with 360° rotational base. Auto shut-off feature.",
+  },
+  {
+    id: "34",
+    name: "Juicer Machine",
+    category: "Kitchen Appliances",
+    price: 5800,
+    image: juicerImg,
+    rating: 4.6,
+    reviews: 76,
+    description: "Powerful juicer for extracting fresh juice from fruits and vegetables. Easy to clean with detachable parts.",
+  },
+  {
+    id: "35",
+    name: "Deep Fryer 3.5L",
+    category: "Kitchen Appliances",
+    price: 6500,
+    image: deepFryerImg,
+    rating: 4.5,
+    reviews: 93,
+    description: "Stainless steel deep fryer with adjustable temperature control. Removable basket and cool-touch handle for safety.",
+  },
+  {
+    id: "36",
+    name: "Wireless Headphones",
+    category: "Electronics",
+    price: 3200,
+    image: headphonesImg,
+    rating: 4.7,
+    reviews: 234,
+    description: "Bluetooth over-ear headphones with soft padding. Long battery life and excellent sound quality for music and calls.",
+  },
+  {
+    id: "37",
+    name: "Power Bank 20000mAh",
+    category: "Electronics",
+    price: 2500,
+    image: powerBankImg,
+    rating: 4.6,
+    reviews: 312,
+    description: "High capacity power bank with LED display. Fast charging for multiple devices. Compact and portable design.",
+  },
+  {
+    id: "38",
+    name: "Charging Cables 3-Pack",
+    category: "Electronics",
+    price: 800,
+    image: chargingCablesImg,
+    rating: 4.4,
+    reviews: 267,
+    description: "Durable braided charging cables with multiple connectors. USB-C, Micro USB, and Lightning compatible. 1.5m length.",
+  },
+  {
+    id: "39",
+    name: "Car Phone Holder",
+    category: "Accessories",
+    price: 650,
+    image: phoneHolderImg,
+    rating: 4.5,
+    reviews: 189,
+    description: "Universal car phone mount with adjustable grip. Dashboard or windshield mounting. 360° rotation for optimal viewing.",
+  },
+  {
+    id: "40",
+    name: "Hair Dryer 1800W",
+    category: "Electronics",
+    price: 2400,
+    image: hairDryerImg,
+    rating: 4.5,
+    reviews: 156,
+    description: "Professional hair dryer with diffuser attachment. Multiple heat and speed settings. Cool shot button for styling.",
+  },
+  {
+    id: "41",
+    name: "Rechargeable Hair Clipper",
+    category: "Electronics",
+    price: 2800,
+    image: hairClipperImg,
+    rating: 4.6,
+    reviews: 203,
+    description: "Professional hair clipper with multiple guide combs. Cordless operation with long battery life. Suitable for home use.",
+  },
+  {
+    id: "42",
+    name: "Digital Weighing Scale",
+    category: "Electronics",
+    price: 1500,
+    image: weighingScaleImg,
+    rating: 4.4,
+    reviews: 187,
+    description: "Tempered glass bathroom scale with LCD display. Accurate weight measurement up to 180kg. Auto on/off feature.",
+  },
+  {
+    id: "43",
+    name: "Laptop Cooling Pad",
+    category: "Electronics",
+    price: 1800,
+    image: laptopCoolerImg,
+    rating: 4.5,
+    reviews: 98,
+    description: "Dual fan laptop cooler with adjustable height. USB powered with quiet operation. Fits laptops up to 17 inches.",
+  },
+  {
+    id: "44",
+    name: "Wireless Mouse",
+    category: "Electronics",
+    price: 950,
+    image: wirelessMouseImg,
+    rating: 4.3,
+    reviews: 245,
+    description: "Ergonomic wireless mouse with smooth tracking. Long battery life and plug-and-play USB receiver. Silent clicking.",
+  },
+  {
+    id: "45",
+    name: "RGB Gaming Keyboard",
+    category: "Electronics",
+    price: 3500,
+    image: keyboardImg,
+    rating: 4.7,
+    reviews: 176,
+    description: "Mechanical keyboard with customizable RGB backlighting. Responsive keys for gaming and typing. Anti-ghosting technology.",
+  },
+  {
+    id: "46",
+    name: "HD Webcam 1080p",
+    category: "Electronics",
+    price: 2200,
+    image: webcamImg,
+    rating: 4.5,
+    reviews: 134,
+    description: "High definition webcam with built-in microphone. Perfect for video calls and streaming. Plug and play USB connection.",
+  },
+  {
+    id: "47",
+    name: "Laptop Backpack",
+    category: "Accessories",
+    price: 2500,
+    image: laptopBagImg,
+    rating: 4.6,
+    reviews: 198,
+    description: "Water-resistant laptop bag with multiple compartments. Fits laptops up to 15.6 inches. Padded straps for comfort.",
+  },
+  {
+    id: "48",
+    name: "Extension Socket with USB",
+    category: "Electronics",
+    price: 1200,
+    image: extensionSocketImg,
+    rating: 4.7,
+    reviews: 289,
+    description: "4-way extension socket with 2 USB ports. Surge protection and safety switches. Compact design for home and office.",
+  },
+  {
+    id: "49",
+    name: "Memory Foam Pillow",
+    category: "Home & Living",
+    price: 1800,
+    image: pillowImg,
+    rating: 4.6,
+    reviews: 167,
+    description: "Ergonomic memory foam pillow for neck support. Hypoallergenic cover that's machine washable. Perfect for side sleepers.",
+  },
+  {
+    id: "50",
+    name: "Duvet Comforter",
+    category: "Home & Living",
+    price: 3500,
+    image: duvetImg,
+    rating: 4.7,
+    reviews: 145,
+    description: "Soft and warm duvet with elegant stitching. Lightweight yet provides excellent insulation. Machine washable and durable.",
+  },
+  {
+    id: "51",
+    name: "Decorative Throw Pillows Set",
+    category: "Home & Living",
+    price: 1600,
+    image: throwPillowsImg,
+    rating: 4.5,
+    reviews: 112,
+    description: "Set of 4 decorative throw pillows in various colors and patterns. Soft fabric covers with zipper closure. Adds style to any room.",
+  },
+  {
+    id: "52",
+    name: "Modern Table Lamp",
+    category: "Home & Living",
+    price: 2200,
+    image: tableLampImg,
+    rating: 4.6,
+    reviews: 98,
+    description: "Elegant table lamp with fabric shade. Provides warm ambient lighting. Perfect for bedroom or living room. E27 bulb socket.",
+  },
+  {
+    id: "53",
+    name: "Canvas Wall Art Set",
+    category: "Home & Living",
+    price: 3200,
+    image: wallArtImg,
+    rating: 4.5,
+    reviews: 87,
+    description: "Set of 3 modern canvas prints with wooden frames. Ready to hang with included hardware. Adds artistic touch to any space.",
+  },
+  {
+    id: "54",
+    name: "Geometric Area Rug",
+    category: "Home & Living",
+    price: 4500,
+    image: areaRugImg,
+    rating: 4.6,
+    reviews: 76,
+    description: "Modern geometric pattern area rug. Soft and durable material that's easy to clean. Available in 150x200cm size.",
+  },
+  {
+    id: "55",
+    name: "Blackout Curtains Set",
+    category: "Home & Living",
+    price: 2800,
+    image: curtainsImg,
+    rating: 4.7,
+    reviews: 156,
+    description: "Thermal insulated blackout curtains with rod pocket. Blocks sunlight and reduces noise. Set of 2 panels. Machine washable.",
+  },
+  {
+    id: "56",
+    name: "Shower Curtain with Hooks",
+    category: "Home & Living",
+    price: 1200,
+    image: showerCurtainImg,
+    rating: 4.4,
+    reviews: 134,
+    description: "Waterproof shower curtain with modern geometric pattern. Includes 12 rust-proof hooks. Mildew resistant and easy to clean.",
+  },
+  {
+    id: "57",
+    name: "Bathroom Shelf Organizer",
+    category: "Home & Living",
+    price: 1800,
+    image: bathroomOrganizerImg,
+    rating: 4.5,
+    reviews: 123,
+    description: "Chrome-plated wall-mounted bathroom organizer. 5 tiers for storing toiletries and towels. Rust-resistant and easy to install.",
+  },
+  {
+    id: "58",
+    name: "Plastic Storage Box Large",
+    category: "Home & Living",
+    price: 1200,
+    image: storageBoxImg,
+    rating: 4.4,
+    reviews: 198,
+    description: "Clear plastic storage container with secure lid. 50L capacity for organizing clothes, toys, or documents. Stackable design.",
+  },
+  {
+    id: "59",
+    name: "8-Tier Shoe Rack",
+    category: "Home & Living",
+    price: 2800,
+    image: shoeRackImg,
+    rating: 4.6,
+    reviews: 167,
+    description: "Metal shoe rack with 8 tiers. Holds up to 32 pairs of shoes. Sturdy construction with wheels for easy movement.",
+  },
+  {
+    id: "60",
+    name: "Velvet Hangers 20-Pack",
+    category: "Home & Living",
+    price: 1400,
+    image: hangersImg,
+    rating: 4.7,
+    reviews: 234,
+    description: "Non-slip velvet hangers with 360° swivel hook. Space-saving slim design. Prevents clothes from slipping. Assorted colors.",
+  },
+  {
+    id: "61",
+    name: "Decorative Wall Mirror",
+    category: "Home & Living",
+    price: 3500,
+    image: mirrorImg,
+    rating: 4.6,
+    reviews: 89,
+    description: "Elegant wall mirror with ornate gold frame. 60x80cm size. High-quality glass with clear reflection. Adds elegance to any room.",
+  },
+  {
+    id: "62",
+    name: "Pedal Trash Can 12L",
+    category: "Home & Living",
+    price: 2200,
+    image: trashCanImg,
+    rating: 4.5,
+    reviews: 176,
+    description: "Stainless steel trash can with foot pedal and lid. Fingerprint-resistant finish. Removable inner bucket for easy cleaning.",
+  },
+  {
+    id: "63",
+    name: "Yoga Mat with Strap",
+    category: "Sports & Fitness",
+    price: 1500,
+    image: yogaMatImg,
+    rating: 4.6,
+    reviews: 203,
+    description: "Non-slip yoga mat with carrying strap. 6mm thick for cushioning and support. Easy to clean and roll up. Perfect for home workouts.",
+  },
+  {
+    id: "64",
+    name: "Adjustable Dumbbells 20kg",
+    category: "Sports & Fitness",
+    price: 4500,
+    image: dumbbellsImg,
+    rating: 4.7,
+    reviews: 145,
+    description: "Adjustable dumbbell set with multiple weight plates. Includes carrying case. Perfect for home gym and strength training.",
+  },
+  {
+    id: "65",
+    name: "Digital Jump Rope",
+    category: "Sports & Fitness",
+    price: 850,
+    image: jumpRopeImg,
+    rating: 4.4,
+    reviews: 178,
+    description: "Jump rope with digital counter and timer. Adjustable length with comfortable handles. Great for cardio workouts.",
+  },
+  {
+    id: "66",
+    name: "Sports Water Bottle 1L",
+    category: "Sports & Fitness",
+    price: 650,
+    image: waterBottleImg,
+    rating: 4.5,
+    reviews: 289,
+    description: "BPA-free water bottle with time markers. Leak-proof lid and wide mouth for easy cleaning. Perfect for gym and outdoor activities.",
+  },
+  {
+    id: "67",
+    name: "Lunch Box with Compartments",
+    category: "Accessories",
+    price: 950,
+    image: lunchBoxImg,
+    rating: 4.4,
+    reviews: 156,
+    description: "Microwave-safe lunch box with 3 compartments. Leak-proof design with secure clips. BPA-free material. Includes cutlery.",
+  },
+  {
+    id: "68",
+    name: "Digital Alarm Clock",
+    category: "Electronics",
+    price: 1200,
+    image: alarmClockImg,
+    rating: 4.5,
+    reviews: 198,
+    description: "LED display alarm clock with USB charging port. Snooze function and adjustable brightness. Temperature display. Dual alarms.",
+  },
+  {
+    id: "69",
+    name: "Desk Organizer Wood",
+    category: "Accessories",
+    price: 1800,
+    image: deskOrganizerImg,
+    rating: 4.6,
+    reviews: 134,
+    description: "Wooden desk organizer with multiple compartments. Holds pens, phone, documents, and accessories. Natural wood finish.",
+  },
+  {
+    id: "70",
+    name: "Ergonomic Office Chair",
+    category: "Furniture",
+    price: 12500,
+    image: officeChairImg,
+    rating: 4.7,
+    reviews: 167,
+    description: "Adjustable office chair with lumbar support. PU leather upholstery with high-density foam. Swivel base with smooth-rolling casters.",
+  },
+  {
+    id: "71",
+    name: "Computer Desk with Drawer",
+    category: "Furniture",
+    price: 9500,
+    image: computerDeskImg,
+    rating: 4.6,
+    reviews: 145,
+    description: "Wooden computer desk with storage drawer and shelf. Spacious tabletop for laptop and accessories. Easy assembly.",
+  },
+  {
+    id: "72",
+    name: "5-Tier Bookshelf",
+    category: "Furniture",
+    price: 8500,
+    image: bookshelfImg,
+    rating: 4.5,
+    reviews: 123,
+    description: "Wooden bookshelf with 5 open shelves. Sturdy construction for books and decorative items. Modern design fits any room.",
+  },
+  {
+    id: "73",
+    name: "Foldable Drying Rack",
+    category: "Home & Living",
+    price: 2200,
+    image: dryingRackImg,
+    rating: 4.4,
+    reviews: 189,
+    description: "Large capacity clothes drying rack. Folds flat for easy storage. Rust-resistant metal frame. Indoor and outdoor use.",
+  },
+  {
+    id: "74",
+    name: "Ironing Board Adjustable",
+    category: "Home & Living",
+    price: 3200,
+    image: ironingBoardImg,
+    rating: 4.5,
+    reviews: 156,
+    description: "Height-adjustable ironing board with cotton cover. Iron rest and sturdy legs. Foldable design for easy storage.",
+  },
+  {
+    id: "75",
+    name: "Broom and Dustpan Set",
+    category: "Home & Living",
+    price: 850,
+    image: broomSetImg,
+    rating: 4.3,
+    reviews: 234,
+    description: "Long-handle broom with dustpan combo. Soft bristles for effective sweeping. Hanging loop for convenient storage.",
+  },
+  {
+    id: "76",
+    name: "Toilet Brush with Holder",
+    category: "Home & Living",
+    price: 650,
+    image: toiletBrushImg,
+    rating: 4.4,
+    reviews: 198,
+    description: "Modern toilet brush with covered holder. Durable bristles and sturdy handle. Sleek design that complements any bathroom.",
+  },
+  {
+    id: "77",
+    name: "Cleaning Gloves Rubber",
+    category: "Home & Living",
+    price: 350,
+    image: cleaningGlovesImg,
+    rating: 4.5,
+    reviews: 267,
+    description: "Heavy-duty rubber cleaning gloves. Protects hands from chemicals and hot water. Non-slip grip. Reusable and durable.",
+  },
 ];
 
 export const categories = [
@@ -336,4 +853,6 @@ export const categories = [
   "Electronics",
   "Accessories",
   "Home & Living",
+  "Sports & Fitness",
+  "Furniture",
 ];
