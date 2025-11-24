@@ -4,6 +4,26 @@ import cutlerySetImg from "@/assets/cutlery-set.jpg";
 import airFryerImg from "@/assets/air-fryer.jpg";
 import vonAirFryerImg from "@/assets/von-air-fryer.jpg";
 import thermosCupsComboImg from "@/assets/thermos-cups-combo.jpg";
+import riceCookerImg from "@/assets/rice-cooker.jpg";
+import microwaveImg from "@/assets/microwave.jpg";
+import waterDispenserImg from "@/assets/water-dispenser.jpg";
+import pressureCookerImg from "@/assets/pressure-cooker.jpg";
+import foodProcessorImg from "@/assets/food-processor.jpg";
+import toasterImg from "@/assets/toaster.jpg";
+import ironBoxImg from "@/assets/iron-box.jpg";
+import bedsheetsSetImg from "@/assets/bedsheets-set.jpg";
+import towelSetImg from "@/assets/towel-set.jpg";
+import dinnerSetImg from "@/assets/dinner-set.jpg";
+import waterFilterImg from "@/assets/water-filter.jpg";
+import vacuumCleanerImg from "@/assets/vacuum-cleaner.jpg";
+import standingFanImg from "@/assets/standing-fan.jpg";
+import wallClockImg from "@/assets/wall-clock.jpg";
+import storageContainersImg from "@/assets/storage-containers.jpg";
+import laundryBasketImg from "@/assets/laundry-basket.jpg";
+import mopBucketSetImg from "@/assets/mop-bucket-set.jpg";
+import dishRackImg from "@/assets/dish-rack.jpg";
+import spiceRackImg from "@/assets/spice-rack.jpg";
+import teaSetImg from "@/assets/tea-set.jpg";
 
 export const products: Product[] = [
   {
@@ -106,6 +126,206 @@ export const products: Product[] = [
     reviews: 76,
     description: "Stainless steel thermos flask with 6 matching insulated cups. Perfect for outdoor activities, picnics, or keeping beverages hot/cold.",
   },
+  {
+    id: "11",
+    name: "Electric Rice Cooker",
+    category: "Kitchen Appliances",
+    price: 4500,
+    image: riceCookerImg,
+    rating: 4.6,
+    reviews: 132,
+    description: "Multi-function rice cooker with digital display. Cooks rice, steams vegetables, and keeps food warm. 1.8L capacity perfect for families.",
+  },
+  {
+    id: "12",
+    name: "Microwave Oven 20L",
+    category: "Kitchen Appliances",
+    price: 7800,
+    image: microwaveImg,
+    rating: 4.5,
+    reviews: 98,
+    description: "Digital microwave oven with 20L capacity and 800W power. Multiple cooking presets and defrost function.",
+  },
+  {
+    id: "13",
+    name: "Water Dispenser Hot & Cold",
+    category: "Kitchen Appliances",
+    price: 9500,
+    image: waterDispenserImg,
+    rating: 4.7,
+    reviews: 164,
+    description: "Hot and cold water dispenser with LED display. Energy efficient with child safety lock. Compatible with standard water bottles.",
+  },
+  {
+    id: "14",
+    name: "Pressure Cooker 6L",
+    category: "Cookware",
+    price: 3800,
+    image: pressureCookerImg,
+    rating: 4.8,
+    reviews: 201,
+    description: "Stainless steel pressure cooker with multiple safety features. Reduces cooking time by up to 70%. Perfect for stews and rice.",
+  },
+  {
+    id: "15",
+    name: "Food Processor 600W",
+    category: "Kitchen Appliances",
+    price: 6200,
+    image: foodProcessorImg,
+    rating: 4.4,
+    reviews: 87,
+    description: "Multi-function food processor with multiple attachments. Chops, slices, shreds, and blends. 2L bowl capacity.",
+  },
+  {
+    id: "16",
+    name: "2-Slice Toaster",
+    category: "Kitchen Appliances",
+    price: 2200,
+    image: toasterImg,
+    rating: 4.3,
+    reviews: 115,
+    description: "Stainless steel toaster with adjustable browning control. Wide slots for thick bread. Removable crumb tray for easy cleaning.",
+  },
+  {
+    id: "17",
+    name: "Steam Iron Box",
+    category: "Electronics",
+    price: 1800,
+    image: ironBoxImg,
+    rating: 4.5,
+    reviews: 143,
+    description: "Steam iron with ceramic soleplate and adjustable temperature control. Anti-drip system and self-cleaning function.",
+  },
+  {
+    id: "18",
+    name: "Cotton Bedsheets Set",
+    category: "Home & Living",
+    price: 2500,
+    image: bedsheetsSetImg,
+    rating: 4.6,
+    reviews: 178,
+    description: "Premium cotton bedsheet set including fitted sheet, flat sheet, and 2 pillowcases. Soft, breathable, and machine washable.",
+  },
+  {
+    id: "19",
+    name: "Bath Towel Set (6 Pieces)",
+    category: "Home & Living",
+    price: 1800,
+    image: towelSetImg,
+    rating: 4.7,
+    reviews: 156,
+    description: "Soft cotton bath towel set in assorted colors. Highly absorbent and quick-drying. Includes 2 bath towels and 4 hand towels.",
+  },
+  {
+    id: "20",
+    name: "Porcelain Dinner Set 24 Pieces",
+    category: "Utensils",
+    price: 5500,
+    image: dinnerSetImg,
+    rating: 4.8,
+    reviews: 92,
+    description: "Elegant 24-piece dinner set with gold trim. Includes plates, bowls, and serving dishes. Microwave and dishwasher safe.",
+  },
+  {
+    id: "21",
+    name: "Water Filter Pitcher",
+    category: "Kitchen Appliances",
+    price: 1500,
+    image: waterFilterImg,
+    rating: 4.4,
+    reviews: 124,
+    description: "2.5L water filter pitcher with advanced filtration system. Removes chlorine, sediment, and improves taste. Includes 1 filter.",
+  },
+  {
+    id: "22",
+    name: "Vacuum Cleaner 1200W",
+    category: "Electronics",
+    price: 8500,
+    image: vacuumCleanerImg,
+    rating: 4.6,
+    reviews: 89,
+    description: "Powerful bagless vacuum cleaner with HEPA filter. Perfect for carpets and hard floors. 5L dust capacity with washable filter.",
+  },
+  {
+    id: "23",
+    name: "Standing Fan 16 Inch",
+    category: "Electronics",
+    price: 3200,
+    image: standingFanImg,
+    rating: 4.5,
+    reviews: 167,
+    description: "Oscillating standing fan with remote control. 3-speed settings and timer function. Adjustable height and quiet operation.",
+  },
+  {
+    id: "24",
+    name: "Modern Wall Clock",
+    category: "Home & Living",
+    price: 1200,
+    image: wallClockImg,
+    rating: 4.3,
+    reviews: 201,
+    description: "Silent quartz wall clock with minimalist design. Clear numbers and smooth movement. Battery operated (battery not included).",
+  },
+  {
+    id: "25",
+    name: "Food Storage Containers Set",
+    category: "Accessories",
+    price: 1600,
+    image: storageContainersImg,
+    rating: 4.6,
+    reviews: 143,
+    description: "12-piece clear plastic food storage container set with snap-lock lids. Microwave, freezer, and dishwasher safe. Various sizes.",
+  },
+  {
+    id: "26",
+    name: "Large Laundry Basket",
+    category: "Home & Living",
+    price: 950,
+    image: laundryBasketImg,
+    rating: 4.4,
+    reviews: 98,
+    description: "Durable plastic laundry basket with ventilation holes and comfortable handles. 45L capacity. Available in various colors.",
+  },
+  {
+    id: "27",
+    name: "Spin Mop and Bucket Set",
+    category: "Home & Living",
+    price: 2200,
+    image: mopBucketSetImg,
+    rating: 4.7,
+    reviews: 187,
+    description: "360° rotating spin mop with bucket and wringer. Microfiber mop head is machine washable. Makes floor cleaning effortless.",
+  },
+  {
+    id: "28",
+    name: "Dish Drying Rack",
+    category: "Accessories",
+    price: 1400,
+    image: dishRackImg,
+    rating: 4.5,
+    reviews: 134,
+    description: "Stainless steel dish rack with draining tray. Compact design with cutlery holder. Rust-resistant and easy to clean.",
+  },
+  {
+    id: "29",
+    name: "Wooden Spice Rack with Jars",
+    category: "Accessories",
+    price: 1800,
+    image: spiceRackImg,
+    rating: 4.6,
+    reviews: 76,
+    description: "Wall-mounted spice rack with 12 glass jars. Keeps spices organized and easily accessible. Includes labels.",
+  },
+  {
+    id: "30",
+    name: "Porcelain Tea Set",
+    category: "Utensils",
+    price: 3500,
+    image: teaSetImg,
+    rating: 4.8,
+    reviews: 112,
+    description: "Elegant 7-piece tea set with gold trim. Includes teapot and 6 cups with saucers. Perfect for entertaining guests.",
+  },
 ];
 
 export const categories = [
@@ -115,4 +335,5 @@ export const categories = [
   "Utensils",
   "Electronics",
   "Accessories",
+  "Home & Living",
 ];
