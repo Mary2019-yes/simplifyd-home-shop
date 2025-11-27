@@ -1,8 +1,9 @@
-import { ShoppingCart, Search, Menu, X } from "lucide-react";
+import { ShoppingCart, Search, Menu, X, UserCircle, LogOut, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface HeaderProps {
   cartItemsCount?: number;
@@ -11,6 +12,7 @@ interface HeaderProps {
 export const Header = ({ cartItemsCount = 0 }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { user, signOut, isAdmin } = useAuth();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -60,6 +62,29 @@ export const Header = ({ cartItemsCount = 0 }: HeaderProps) => {
               </div>
             </div>
 
+            {user ? (
+              <>
+                {isAdmin && (
+                  <Link to="/admin">
+                    <Button variant="outline" size="sm" className="hidden md:flex">
+                      <Shield className="h-4 w-4 mr-2" />
+                      Admin
+                    </Button>
+                  </Link>
+                )}
+                <Button variant="ghost" size="icon" onClick={() => signOut()}>
+                  <LogOut className="h-5 w-5" />
+                </Button>
+              </>
+            ) : (
+              <Link to="/auth">
+                <Button variant="outline" size="sm" className="hidden md:flex">
+                  <UserCircle className="h-4 w-4 mr-2" />
+                  Sign In
+                </Button>
+              </Link>
+            )}
+
             <Link to="/cart">
               <Button variant="ghost" size="icon" className="relative">
                 <ShoppingCart className="h-5 w-5" />
@@ -98,6 +123,36 @@ export const Header = ({ cartItemsCount = 0 }: HeaderProps) => {
                 {link.label}
               </Link>
             ))}
+            {user ? (
+              <>
+                {isAdmin && (
+                  <Link
+                    to="/admin"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block py-2 text-sm font-medium text-muted-foreground"
+                  >
+                    Admin Panel
+                  </Link>
+                )}
+                <button
+                  onClick={() => {
+                    signOut();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="block w-full text-left py-2 text-sm font-medium text-muted-foreground"
+                >
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <Link
+                to="/auth"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-2 text-sm font-medium text-muted-foreground"
+              >
+                Sign In
+              </Link>
+            )}
             <div className="pt-2">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
