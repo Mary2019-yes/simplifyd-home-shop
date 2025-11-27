@@ -1,14 +1,96 @@
 import { useParams, Link } from "react-router-dom";
-import { products } from "@/lib/products";
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/CartContext";
 import { Star, ShoppingCart, ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { ImageCarousel } from "@/components/ImageCarousel";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart } = useCart();
-  const product = products.find((p) => p.id === id);
+  const [product, setProduct] = useState<any>(null);
+  const [images, setImages] = useState<any[]>([]);
+  const [relatedProducts, setRelatedProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchProduct();
+  }, [id]);
+
+  const fetchProduct = async () => {
+    setLoading(true);
+    const { data: productData, error: productError } = await supabase
+      .from("products")
+      .select("*")
+      .eq("id", id)
+      .maybeSingle();
+
+    if (productError || !productData) {
+      setLoading(false);
+      return;
+    }
+
+    setProduct(productData);
+
+    const { data: imagesData } = await supabase
+      .from("product_images")
+      .select("*")
+      .eq("product_id", id)
+      .order("display_order");
+
+    setImages(
+      imagesData?.map((img) => ({
+        url: img.image_url,
+        isPrimary: img.is_primary,
+      })) || []
+    );
+
+    const { data: relatedData } = await supabase
+      .from("products")
+      .select("id, name, price, category")
+      .eq("category", productData.category)
+      .neq("id", id)
+      .limit(4);
+
+    if (relatedData) {
+      const productsWithImages = await Promise.all(
+        relatedData.map(async (p) => {
+          const { data: img } = await supabase
+            .from("product_images")
+            .select("image_url")
+            .eq("product_id", p.id)
+            .eq("is_primary", true)
+            .maybeSingle();
+          return { ...p, image: img?.image_url || "" };
+        })
+      );
+      setRelatedProducts(productsWithImages);
+    }
+
+    setLoading(false);
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen py-12">
+        <div className="container mx-auto px-4">
+          <Skeleton className="h-10 w-32 mb-6" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <Skeleton className="aspect-square" />
+            <div className="space-y-4">
+              <Skeleton className="h-8 w-3/4" />
+              <Skeleton className="h-6 w-1/2" />
+              <Skeleton className="h-12 w-32" />
+              <Skeleton className="h-24 w-full" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (!product) {
     return (
@@ -34,15 +116,9 @@ const ProductDetail = () => {
         </Button>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Product Image */}
+          {/* Product Images Carousel */}
           <div className="animate-fade-in">
-            <div className="aspect-square overflow-hidden rounded-lg bg-muted">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <ImageCarousel images={images} />
           </div>
 
           {/* Product Info */}
@@ -115,13 +191,11 @@ const ProductDetail = () => {
         </div>
 
         {/* Related Products Section */}
-        <div className="mt-16">
-          <h2 className="text-3xl font-bold mb-8 text-foreground">You May Also Like</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products
-              .filter((p) => p.category === product.category && p.id !== product.id)
-              .slice(0, 4)
-              .map((relatedProduct) => (
+        {relatedProducts.length > 0 && (
+          <div className="mt-16">
+            <h2 className="text-3xl font-bold mb-8 text-foreground">You May Also Like</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {relatedProducts.map((relatedProduct) => (
                 <Card key={relatedProduct.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                   <Link to={`/product/${relatedProduct.id}`}>
                     <div className="aspect-square overflow-hidden bg-muted">
@@ -142,8 +216,9 @@ const ProductDetail = () => {
                   </Link>
                 </Card>
               ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
